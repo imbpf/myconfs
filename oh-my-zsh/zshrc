@@ -92,7 +92,6 @@ alias cp="cp -i"
 alias so="source ~/.zshrc"
 alias cr="clear ; ls"
 alias grep="grep -n --color=auto "
-alias gp="grep --color=auto "
 alias gt="gnome-terminal &"
 
 alias ls="ls --color=tty"
@@ -123,3 +122,5 @@ alias ......='cd ../../../../..'
 alias df='df -h -a'
 # Size of file/directory
 alias du='du -sh'
+
+alias grao='git remote add origin'
