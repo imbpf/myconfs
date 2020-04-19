@@ -1,0 +1,269 @@
+" Coding options.UTF-8 is preferred in Linux
+" set fileencoding=utf-8
+" set fileencodings=utf-8,gb18030,iso-8859-15,utf-16,big5
+
+"--------Toggle Gvim Menu and Toolbar---------------"
+set guioptions-=m
+set guioptions-=T
+map <silent> <F9> :if &guioptions =~# 'T' <Bar>
+        \set guioptions-=T <Bar>
+        \set guioptions-=m <Bar>
+    \else <Bar>
+        \set guioptions+=T <Bar>
+        \set guioptions+=m <Bar>
+    \endif<CR>
+
+" --------------------------------------------------------
+" Colorscheme 
+" let g:molokai_original=1
+colorscheme molokai_bpf
+" colorscheme Tomorrow-Night-Eighties
+" Do case ignoring match
+set ignorecase
+" Display the line numbers
+set number
+" Display the location of current cursor
+set ruler
+" Highlight search results
+set hlsearch
+" Incremental search
+set incsearch
+" Syntax highlight enable
+syntax enable
+" Do not generate .swp file
+set noswapfile
+" Show command in status line
+set showcmd
+" Highlight current line
+set cursorline
+" set the color of the active column
+set cursorcolumn
+" Display long line in next line
+set wrap
+" Start scroll down with cursor in last 8 displayed lines
+set so=8
+" Set the default font
+set guifont=Monospace\ 14,Fixed\ 14 
+" Show tab and space
+" set list
+" set listchars=tab:>-,trail:-
+" set listchars=tab:\|_,trail:_
+" Auto indent
+set autoindent
+" Use mouth everywhere
+set mouse=a
+" set max character number in a single line when editing
+set textwidth=0
+" set the color of the cursor line/column
+hi CursorLine ctermbg=black guibg=black
+hi CursorColumn ctermbg=black guibg=black
+" hi CursorLine cterm=None ctermbg=black ctermfg=white guibg=black guifg=white
+" cursor no blink
+" set gcr=a:block-blinkon0
+set gcr=n-v:block-blinkon0
+set gcr=i:ver30-blinkwait300-blinkon200-blinkoff150
+
+" Turn on filetype recognition/autoindent/filetype plugins
+" filetype plugin indent on
+" Set autocmds for specific filetypes
+" autocmd FileType python,c,cpp,perl setlocal et sta sw=4 sts=4
+au BufNewFile,BufRead *.svi        set filetype=verilog_systemverilog
+au BufNewFile,BufRead *.svp        set filetype=verilog_systemverilog
+au BufNewFile,BufRead *.f          set filetype=verilog_systemverilog
+au BufNewFile,BufRead *.batch      set filetype=verilog_systemverilog
+" au BufNewFile,BufRead batch_file_* set filetype=c
+" au BufNewFile,BufRead *.PSL set filetype=c
+" au BufNewFile,BufRead *.ini set filetype=sh
+" au BufNewFile,BufRead *.parms set filetype=c
+" au BufNewFile,BufRead *.facs set filetype=c
+" au BufNewFile,BufRead *.bom set filetype=c
+" au BufNewFile,BufRead *.cook set filetype=c
+" au BufNewFile,BufRead *.modules set filetype=c
+" au BufNewFile,BufRead *.flt set filetype=c
+
+
+"--------------------------------------------
+" Simple maps
+map <A-y> "+y
+map <A-x> "+x
+map <A-p> "+gP
+map <C-a> ggvG$
+map <A-j> 10j
+map <A-k> 10k
+map <A-h> 10h
+map <A-l> 10l
+nmap <A-w> :set wrap<cr>
+nmap <A-n> :set nowrap<cr>
+
+" Keyboard shortcut for Tab operations
+" nmap <A-F1>  :tabnew<cr>
+" nmap <F10> :tabp<cr>
+" nmap <F12> :tabn<cr>
+" set tabpagemax=25
+
+" TabBar settings
+let g:Tb_MaxSize = 3
+let g:Tb_TabWrap = 1
+
+" Keyboard shortcut for write/quit
+" nmap <A-n> :w<cr>
+" nmap <A-m> :wq<cr>
+
+"--------------------------------------------
+" Settings for TAB and indent
+" Do C-style indenting
+" set cindent
+" Auto indent width
+" set shiftwidth=2
+" TAB width
+" ':retab 8' can set tabstop=8 temporarily
+" set tabstop=4
+" Replace TAB with blank spaces
+" set expandtab
+" Unify tabstop and shiftwidth
+" set softtabstop=2
+
+" replace TAB with spaces
+" set expandtab
+" TAB width settings
+" set tabstop=2
+" set softtabstop=2
+" set shiftwidth=2
+
+" From MaoWei
+set autoindent
+set tabstop=4
+set expandtab
+set foldenable
+
+" set foldmethod
+"   zM -- close all folds
+"   ZR -- open all folds
+"   zf -- create fold for the selected lines
+"   zc -- close current fold
+"   zo -- open current fold
+set fdm=marker
+
+"--------settings for Taglist---------------"
+" Let the tag list open automatically
+" let Tlist_Auto_Open=1
+" Split to the right side of the screen
+" let Tlist_Use_Right_Window=1
+" Do not close tags for other files
+" let Tlist_File_Fold_Auto_Close=1
+" Show the tags of current file only
+" let Tlist_Show_One_File=1
+" Exit vim if Tlist window is the last
+" let Tlist_Exit_OnlyWindow=1
+" Keyboard shortcut for TagList Toggle
+" nmap tl :TlistToggle<cr>
+
+
+"--------settings for WinManager-------------"
+" Combine WinManager with Talist window
+" let g:winManagerWindowLayout='FileExplorer|TagList'
+" Keyboard shortcut for winManager Toggle
+" nmap wm :WMToggle<cr>
+
+
+"--------settings for MiniBuffExplorer-------"
+" let g:miniBufExplMapCTabSwitchBufs=1
+" let g:miniBufExplMapWindowNavVim=1
+" let g:miniBufExplMapWindowNavArrows=1
+" let g:minibufexplmodseltarget = 1
+" " Keyboard shortcut for MiniBuffExplorer Toggle
+" set switchbuf=newtab
+" nnoremap <F12> :sbnext<CR>
+" nnoremap <F10> :sbprevious<CR>
+nmap <A-F11> :bp<cr>
+nmap <A-F12> :bn<cr>
+" nmap <A-1> :b1<cr>
+" nmap <A-2> :b2<cr>
+" nmap <A-3> :b3<cr>
+" nmap <A-4> :b4<cr>
+" nmap <A-5> :b5<cr>
+" nmap <A-6> :b6<cr>
+" nmap <A-7> :b7<cr>
+" nmap <A-8> :b8<cr>
+" nmap <A-9> :b9<cr>
+" nmap <A-F10> :b10<cr>
+" nmap <A-F11> :b11<cr>
+" nmap <A-F12> :b12<cr>
+" "nmap \wq <C-l>:w<cr><C-k><C-k>d<cr>
+" nmap <F2> :w<cr><C-k><C-k>d<cr>
+nmap <A-F2> :bp <BAR> bd #<CR>
+
+"--------settings for A----------------------"
+" nnoremap <silent> <F4> :A<CR>
+
+
+"--------settings for NERDTree---------------"
+nmap <F10> :NERDTreeToggle<CR>
+" Make nerd list in right of the window
+" let g:NERDTreeWinPos = "right"
+let g:NERDTreeMinimalUI = 1
+" let g:nerdtree_tabs_synchronize_view = 1
+
+"--------settings for cscope-----------------"
+" set cscopequickfix=s-,c-,d-,i-,t-,e-
+
+
+"--------settings for grep-------------------"
+" nnoremap <silent> <F3> :Grep -i --color=auto <CR>
+" nnoremap <silent> <A-F3> :Rgrep -i --color=auto <CR>
+" nnoremap <silent> <C-F3> :Bgrep -i --color=auto <CR>
+
+
+"--------settings for auto completion----"
+" filetype plugin indent on
+" set completeopt=longest,menu
+" let g:SuperTabRetainCompletionType=2
+" let g:SuperTabDefaultCompletionType="<C-X><C-O>"
+
+"--------settings for ctrlp--------------"
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_root_markers=['']
+let g:ctrlp_working_path_mode = 'rw'
+
+" specify the newly created file is to be opened in a new tab
+" let g:ctrlp_open_new_file = 't'
+" customize the mappings in CtrlP's prompt
+" let g:ctrlp_prompt_mappings = { 
+"   \ 'AcceptSelection("e")': ['<c-t>'],
+"   \ 'AcceptSelection("t")': ['<cr>'] 
+"   \ }
+" custom the files/directories which will be excluded in the results
+let g:ctrlp_custom_ignore = '\v[\/](work|regr_work|ic_regr_work)$'
+" show the opened buffers in CtrlP
+" nmap <C-b> :CtrlPBuffer<CR>
+"
+"--------settings for vim-airline--------------"
+set runtimepath^=~/.vim/vim-airline
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+"--------settings for vim-buffergator--------------"
+" set runtimepath^=~/.vim/vim-buffergator
+" Use the right side of the screen
+" let g:buffergator_viewport_split_policy = 'R'
+" let g:buffergator_autoexpand_on_split = 1
+" let g:buffergator_autoupdate = 1
+" let g:buffergator_show_full_directory_path = 0
+" Toggle the entire list of buffers
+" nmap <C-b> :BuffergatorToggle<cr>
+
+"--------settings for bufexplorer--------------"
+set runtimepath^=~/.vim/bufexplorer
+nmap <C-b> :ToggleBufExplorer<cr>
+let g:bufExplorerDefaultHelp=0       " Do not show default help.
+let g:bufExplorerSplitBelow=1        " Split new window below current.
+
+"--------settings for ctags--------------"
+" Execute the following cmds to generate the tags file
+" $ ctags -R [dirs]
+" Read the generated tags file into vim
+" set tags=/work/c201601/baipengfei/c201601/sim/top_vrf/fw_tags
+" nmap <A-f> :set tags=/work/c201601/baipengfei/c201601/sim/top_vrf/fw_tags<cr>
+" nmap <A-s> :set tags=/work/c201601/baipengfei/c201601/sim/top_vrf/sv_tags<cr>
